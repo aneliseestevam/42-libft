@@ -15,6 +15,8 @@ In the **bonus part** we need to code functions to manipulate lists.
 
 **Extras:** add any function to the libft.
 
+This project will be in constant evolution over time, so it may be that the next time you look at this file it will be different. Enjoy!
+
 ## Part 01
 
 | Function | Description |
