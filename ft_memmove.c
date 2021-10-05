@@ -1,18 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aestevam <aestevam@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/21 19:18:58 by aestevam          #+#    #+#             */
-/*   Updated: 2021/09/28 21:17:04 by aestevam         ###   ########.fr       */
+/*   Created: 2021/09/27 23:34:00 by aestevam          #+#    #+#             */
+/*   Updated: 2021/10/05 07:22:15 by aestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	*ft_memmove(void *dest, const void *src, size_t count)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	unsigned char		*d;
+	const unsigned char	*s;
+	size_t				i;
+
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
+	i = 0;
+	if (!d && !s)
+		return (NULL);
+	if (d > s)
+		while (count-- > 0)
+			d[count] = s[count];
+	else
+	{
+		while (i < count)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
+	return (dest);
 }

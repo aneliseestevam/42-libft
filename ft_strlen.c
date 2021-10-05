@@ -1,18 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aestevam <aestevam@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/21 19:18:58 by aestevam          #+#    #+#             */
-/*   Updated: 2021/09/28 21:17:04 by aestevam         ###   ########.fr       */
+/*   Created: 2021/09/27 22:20:42 by aestevam          #+#    #+#             */
+/*   Updated: 2021/10/05 07:28:46 by aestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+size_t	ft_strlen(const char *s)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	size_t	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
+
+// int main (void)
+// {
+//   char str[5] = "Curso";
+//   int tamanho;
+
+//   tamanho = ft_strlen(str);
+
+//   printf("O tamanho da string %s vale %d\n", str, tamanho);
+
+//   return 0;
+// }

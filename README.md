@@ -7,13 +7,13 @@
 
 **This project aims to code a C library regrouping usual functions of the language and must behave the same as the originals.**
 
-In this **first part** we need to re-code a set of the libc functions, as defined in their man, with the same prototype and behaviors as the originals.
+* In this **first part** we need to re-code a set of the libc functions, as defined in their man, with the same prototype and behaviors as the originals.
 
-In this **second part** we need to code a set of functions that are either not included in the libc, or included in a different form.
+* In this **second part** we need to code a set of functions that are either not included in the libc, or included in a different form.
 
-In the **bonus part** we need to code functions to manipulate lists.
+* In the **bonus part** we need to code functions to manipulate lists.
 
-**Extras:** add any function to the libft.
+* **Extras:** add any function to the libft.
 
 This project will be in constant evolution over time, so it may be that the next time you look at this file it will be different. Enjoy!
 
