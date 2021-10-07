@@ -6,44 +6,83 @@
 #    By: aestevam <aestevam@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/21 18:58:00 by aestevam          #+#    #+#              #
-#    Updated: 2021/10/05 08:04:35 by aestevam         ###   ########.fr        #
+#    Updated: 2021/10/06 22:02:13 by aestevam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	libft.a
+NAME	= libft.a
 
-CC			=	gcc
+SRCS	=	ft_atoi.c \
+			ft_bzero.c \
+			ft_calloc.c \
+			ft_isalnum.c \
+			ft_isalpha.c \
+			ft_isascii.c \
+			ft_isdigit.c \
+			ft_isprint.c \
+			ft_itoa.c \
+			ft_memchr.c \
+			ft_memcmp.c \
+			ft_memcpy.c \
+			ft_memmove.c \
+			ft_memset.c \
+			ft_putchar_fd.c \
+			ft_putendl_fd.c \
+			ft_putnbr_fd.c \
+			ft_putstr_fd.c \
+			ft_split.c \
+			ft_strchr.c \
+			ft_strdup.c \
+			ft_striteri.c \
+			ft_strjoin.c \
+			ft_strlcat.c \
+			ft_strlcpy.c \
+			ft_strlen.c \
+			ft_strmapi.c \
+			ft_strncmp.c \
+			ft_strnstr.c \
+			ft_strrchr.c \
+			ft_strtrim.c \
+			ft_substr.c \
+			ft_tolower.c \
+			ft_toupper.c \
 
-RM			=	rm -f
+# BSRCS 	= 	ft_lstnew.c\
+#        		ft_lstadd_front.c\
+#        		ft_lstsize.c\
+#        		ft_lstlast.c\
+#        		ft_lstadd_back.c\
+#        		ft_lstdelone.c\
+# 			ft_lstclear.c\
+# 			ft_lstiter.c\
+# 			ft_lstmap.c
 
-FLAGS		=	-Wall -Wextra -Werror
+OBJS	= ${SRCS:.c=.o}
 
-LIB			=	libft.h
+BOBJS	= ${BSRCS:.c=.o}
 
-SRCS		=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c \
-				ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
-				ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c \
-				ft_memset.c ft_strchr.c ft_strdup.c ft_strlcat.c \
-				ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c \
-				ft_strrchr.c ft_tolower.c ft_toupper.c
+CC		= clang
 
-OBJS		=	${SRCS:%.c=%.o}
+CFLAGS	= -Wall -Wextra -Werror -g
 
-all:			$(NAME)
+.c.o:
+			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-$(NAME): 		$(OBJS) ${LIB}
-	ar rc ${NAME} ${OBJS}
+${NAME}:	${OBJS}
+			ar -rcs ${NAME} ${OBJS}
 
-${OBJS}:
-		${CC} -I . -c ${FLAGS} ${SRCS}
+all:		${NAME}
 
 clean:
-		$(RM) $(OBJS)
+	rm -f ${OBJS}
+	rm -f ${BOBJS}
 
-fclean:			clean
-		$(RM) $(NAME) a.out libft.so
+fclean: clean
+	rm -f ${NAME}
 
-re:		fclean all
+re: fclean all
 
-run:	re
-		${CC} ${FLAGS} main.c -lft -L . && ./a.out
+bonus: 	${BOBJS}
+	ar -rcs $(NAME) ${BOBJS}
+
+.PHONY: all, bonus, clean, fclean, re
