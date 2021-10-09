@@ -6,8 +6,14 @@
 /*   By: aestevam <aestevam@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 10:45:15 by aestevam          #+#    #+#             */
-/*   Updated: 2021/10/07 10:45:17 by aestevam         ###   ########.fr       */
+/*   Updated: 2021/10/09 13:47:41 by aestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_putendl_fd(char *s, int fd)
+{
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
+}

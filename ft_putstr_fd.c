@@ -6,8 +6,19 @@
 /*   By: aestevam <aestevam@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 10:45:27 by aestevam          #+#    #+#             */
-/*   Updated: 2021/10/07 10:45:28 by aestevam         ###   ########.fr       */
+/*   Updated: 2021/10/08 17:08:16 by aestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	if (s)
+	{
+		while (*s)
+		{
+			write(fd, s++, 1);
+		}
+	}
+}

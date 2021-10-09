@@ -6,8 +6,13 @@
 /*   By: aestevam <aestevam@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 10:44:53 by aestevam          #+#    #+#             */
-/*   Updated: 2021/10/07 10:45:02 by aestevam         ###   ########.fr       */
+/*   Updated: 2021/10/08 16:06:45 by aestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
