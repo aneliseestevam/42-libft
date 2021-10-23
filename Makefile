@@ -6,7 +6,7 @@
 #    By: aestevam <aestevam@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/21 18:58:00 by aestevam          #+#    #+#              #
-#    Updated: 2021/10/06 22:02:13 by aestevam         ###   ########.fr        #
+#    Updated: 2021/10/19 10:01:44 by aestevam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,15 +47,15 @@ SRCS	=	ft_atoi.c \
 			ft_tolower.c \
 			ft_toupper.c \
 
-# BSRCS 	= 	ft_lstnew.c\
-#        		ft_lstadd_front.c\
-#        		ft_lstsize.c\
-#        		ft_lstlast.c\
-#        		ft_lstadd_back.c\
-#        		ft_lstdelone.c\
-# 			ft_lstclear.c\
-# 			ft_lstiter.c\
-# 			ft_lstmap.c
+BSRCS 	= 	ft_lstnew.c\
+       		ft_lstadd_front.c\
+       		ft_lstsize.c\
+       		ft_lstlast.c\
+       		ft_lstadd_back.c\
+       		ft_lstdelone.c\
+			ft_lstclear.c\
+			ft_lstiter.c\
+			ft_lstmap.c
 
 OBJS	= ${SRCS:.c=.o}
 

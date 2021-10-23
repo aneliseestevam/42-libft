@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aestevam <aestevam@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/28 21:16:40 by aestevam          #+#    #+#             */
-/*   Updated: 2021/10/18 22:32:08 by aestevam         ###   ########.fr       */
+/*   Created: 2021/10/09 18:15:07 by aestevam          #+#    #+#             */
+/*   Updated: 2021/10/09 18:33:54 by aestevam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char			*str_c;
-	unsigned char	c_c;
+	t_list	*new;
 
-	str_c = (char *)str;
-	c_c = (unsigned char)c;
-	while (*str_c)
+	if (!lst || !f)
+		return (NULL);
+	new = ft_lstnew(f(lst->content));
+	if (new == NULL)
 	{
-		if (*str_c == c_c)
-			return (str_c);
-		str_c++;
+		ft_lstclear(&new, del);
+		return (NULL);
 	}
-	if (c_c == '\0' && *str_c == '\0')
-		return (str_c);
-	return (NULL);
+	new->next = ft_lstmap(lst->next, f, del);
+	return (new);
 }
