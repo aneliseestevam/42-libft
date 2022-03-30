@@ -1,5 +1,7 @@
 # Libft
 
+[![norminette Actions Status](https://github.com/aneliseestevam/42-libft/workflows/norminette/badge.svg)](https://github.com/aneliseestevam/42-libft/actions)
+
 * [Project](#project)
 * [Part 01](#part_1)
 
