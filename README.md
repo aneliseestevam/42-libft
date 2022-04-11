@@ -1,4 +1,4 @@
-# Libft
+# Libft [![aestevam's 42 Libft Score](https://badge42.vercel.app/api/v2/cl1uxlt10005409kv2yyd62b7/project/2308134)](https://github.com/JaeSeoKim/badge42)
 
 [![norminette Actions Status](https://github.com/aneliseestevam/42-libft/workflows/norminette/badge.svg)](https://github.com/aneliseestevam/42-libft/actions)
 
